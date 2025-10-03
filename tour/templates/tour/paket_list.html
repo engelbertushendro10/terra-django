@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WR7463W7');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="description"
+    content="Temukan paket tour dan travel terbaik untuk liburan Anda. Kami menyediakan layanan wisata domestik & internasional dengan harga bersahabat dan pelayanan terpercaya.">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="g1yooMMQj9RAlGBYZaKkP4LkYwfWl3XzBXlYO2aIKS8" />
+  <meta property="og:title" content="{{ self.title }}">
+  <meta property="og:description"
+    content="Jelajahi Labuan Bajo bersama {{ self.title }} – {{ self.paket_category.title }} eksklusif mencakup Komodo, Pulau Padar, dan kapal phinisi terbaik.">
+  <meta property="og:image" content="{{ self.thumbnail.url }}">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ self.title }}">
+  <meta name="twitter:description"
+    content="Paket tour Labuan Bajo terbaik bersama {{ self.title }}. Nikmati Komodo, Pulau Padar, dan kapal phinisi eksklusif.">
+  <meta name="twitter:image" content="{{ self.thumbnail.url }}">
+  <title>Terra Bajo</title>
+
+
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="{% static 'tour/css/wisata.css'%}">
+  <link rel="stylesheet" href="{% static 'tour/css/sosmed.css'%}">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+
+<body id="top">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WR7463W7" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- - #HEADER -->
+
+  <header class="headers" data-headers>
+
+    <div class="overlays" data-overlays></div>
+
+    <div class="headers-top">
+      <div class="containers">
+
+        <a href="tel:6285338393764" class="helpline-box">
+
+          <div class="icon-box">
+            <ion-icon name="call-outline"></ion-icon>
+          </div>
+
+          <div class="wrappers">
+            <p class="helpline-title">For More Information :</p>
+
+            <p class="helpline-number">+6285338393764</p>
+          </div>
+
+        </a>
+
+        <a href="#" class="logo">
+          <h1>TerraBajo</h1>
+        </a>
+
+        <div class="headers-btns-group">
+
+          <button class="search-btns" aria-label="Search">
+            <ion-icon name="search"></ion-icon>
+          </button>
+
+          <button class="nav-open-btns" aria-label="Open Menu" data-nav-open-btns>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="headers-bottom">
+      <div class="containers">
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/terratour_id?igsh=MWR0bnNoMm95ZWk1bg%3D%3D" class="social-link">
+              <!-- <ion-icon name="logo-twitter"></ion-icon> -->
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+        <nav class="navbars" data-navbars>
+
+          <div class="navbars-top">
+
+            <a href="#" class="logo">
+              <p style="color: rgb(255, 255, 255);">Terra bajo</p>
+            </a>
+
+            <button class="nav-close-btns" aria-label="Close Menu" data-nav-close-btns>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <ul class="navbars-list">
+
+            <li>
+              <a href="#home" class="navbars-link" data-nav-link>home</a>
+            </li>
+            <li>
+              <a href="#destination" class="navbars-link" data-nav-link>destination</a>
+            </li>
+
+            <li>
+              <a href="#package" class="navbars-link" data-nav-link>packages</a>
+            </li>
+
+            <li>
+              <a href="#gallery" class="navbars-link" data-nav-link>gallery</a>
+            </li>
+            <li>
+              <a href="blog/" class="navbars-link" data-nav-link>Blog</a>
+            </li>
+            <li>
+              <a href="#contact" class="navbars-link" data-nav-link>contact us</a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+        <button class="btns btns-primary">Book Now</button>
+
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <article>
+      <section class="hero" id="home">
+        <div class="container">
+
+          <h2 class="h1 hero-title" style="color: rgb(255, 255, 255);">Terra Tour & Travel</h2>
+
+          <p class="hero-text">
+            Nikmati Alam Flores yang tak terlupakan bersama kami
+          </p>
+
+          <div class="btns-group">
+            <button class="btns btns-primary"><a class="customs" style="text-decoration: none; color:aliceblue"
+                href="#destination">Learn more</a></button>
+            <button class="btns btns-secondary">Book now</button>
+          </div>
+
+        </div>
+      </section>
+      <section class="popular" id="destination" style="margin-top: -50px;">
+        <div class="containers">
+
+          <h2 class="h2 section-title">Popular destination</h2>
+
+          <p class="section-text">
+            Dengan pesona alam yang memukau dan budaya yang kaya, tempat ini menjadi tujuan impian. Eksplorasi dimulai
+            sekarang, temukan ketenangan dan inspirasi di setiap sudut. Jangan lewatkan kesempatan ini, kunjungi kami
+            segera!
+          </p>
+
+          <ul class="popular-list">
+
+            {% for blog in paket_list%}
+
+            <li>
+              <div class="popular-cards">
+
+                <figure class="cards-img">
+                  <img src="{{ blog.thumbnail.url}}" alt="{{blog.title}}" loading="lazy">
+                </figure>
+
+                <div class="cards-content">
+
+                  <div class="cards-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="cards-subtitle">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#photoSliderModal-{{blog.slug}}">klik untuk
+                      detail</a>
+
+                  </p>
+
+                  <h3 class="h4 cards-title">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#photoSliderModal">{{blog.title}}</a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+            <div class="modal fade" id="photoSliderModal-{{blog.slug}}" tabindex="-1"
+              aria-labelledby="photoSliderModalLabel-{{blog.slug}}" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="photoSliderModalLabel-{{blog.slug}}">Detail Paket {{blog.title}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrappers">
+                        {% for photo in blog.foto_galeri %}
+                        <div class="swiper-slide">
+                          <img src="{{ photo.image.url }}" class="img-fluid" alt="{{ photo.caption|default:'Foto' }}">
+                        </div>
+                        {% endfor %}
+                      </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </ul>
+
+        </div>
+      </section>
+
+      <!--- #PACKAGE-->
+
+      <section class="package" id="package" style="margin-top: -150px;">
+        <div class="containers">
+
+          <p class="section-subtitle">Paket Wisata Populer Labuan Bajo & Komodo: Petualangan Tak Terlupakan Bersama
+            Terrabajo</p>
+
+          <h2 class="h2 section-title">Checkout Our Packeges</h2>
+
+          <p class="section-text">
+            Bersama Terrabajo, Anda dapat memilih berbagai jenis paket Tour Labuan Bajo yang sesuai dengan gaya liburan
+            Anda:
+          </p>
+
+          <ul class="package-list">
+            {% for kapal in kapal_display %}
+            <li>
+              <div class="package-cards">
+
+                <figure class="cards-banner">
+                  <img src="{{kapal.thumbnail.url}}" alt="Experience a Great Vacation at Flores Sea" loading="lazy">
+                </figure>
+
+                <div class="cards-content">
+
+                  <h3 class="h3 cards-title">{{kapal.nama}}</h3>
+
+                  <p class="cards-text">
+                    Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque,
+                    cras, aspernatur.
+                  </p>
+
+                  <ul class="cards-meta-list">
+
+                    <li class="cards-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+
+                        <p class="text">6D/5N</p>
+                      </div>
+                    </li>
+
+                    <li class="cards-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+
+                        <p class="text">max: 12 person</p>
+                      </div>
+                    </li>
+
+                    <li class="cards-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="location"></ion-icon>
+
+                        <p class="text">Labuan Bajo</p>
+                      </div>
+                    </li>
+                  </ul>
+
+                </div>
+
+                <div class="cards-price">
+
+                  <div class="wrappers">
+                    <div class="cards-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                  </div>
+
+                  <p class="price">
+                    $750
+                    <span>/ per person</span>
+                  </p>
+
+                  <button class="btns btns-secondary"><a href="" data-bs-toggle="modal"
+                      data-bs-target="#photoSliderModal-{{kapal.slug}}"
+                      style="text-decoration: none; color:azure;">Detail</a></button>
+
+                </div>
+
+              </div>
+            </li>
+            <div class="modal fade" id="photoSliderModal-{{kapal.slug}}" tabindex="-1"
+              aria-labelledby="photoSliderModalLabel-{{kapal.slug}}" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="photoSliderModalLabel-{{kapal.slug}}">Detail Paket {{blog.title}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrappers">
+                        {% for photo in kapal.foto_galeri %}
+                        <div class="swiper-slide">
+                          <img src="{{ photo.image.url }}" class="img-fluid" alt="{{ photo.caption|default:'Foto' }}">
+                        </div>
+                        {% endfor %}
+                      </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </ul>
+          <button class="btns btns-primary">View All Packages</button>
+        </div>
+      </section>
+      <!--- #GALLERY-->
+      <section class="gallery" id="gallery" style="margin-top: -100px;">
+        <div class="containers">
+
+          <p class="section-subtitle">Terra Blog</p>
+
+          <h2 class="h2 section-title">Our Blogs</h2>
+
+          <p class="section-text">
+            Jelajahi keindahan alam dan budaya Flores melalui blog kami. Dapatkan tips perjalanan, rekomendasi
+            destinasi,
+            dan cerita menarik untuk inspirasi liburan Anda berikutnya.
+          </p>
+
+          <!-- slider for card list blog -->
+          <div id="blogCarousel" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+              {% for post in blog_display %}
+              {# Gunakan modulo 3 (post.counter0|divisibleby:3) untuk menandai awal slide baru #}
+              {% if forloop.counter0|divisibleby:3 %}
+              {# Buka carousel-item baru. Tambahkan "active" hanya di slide pertama #}
+              <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="row justify-content-center g-4 p-4">
+                  {% endif %}
+
+                  {# Konten Card Blog: Ambil 4 kolom agar 3 card muat dalam 12 kolom (12/3=4) #}
+                  <div class="col-md-4">
+                    <a href="{% url 'blog_detail' post.slug %}" style="text-decoration: none; color: inherit;">
+                      <div class="card blog-card">
+                        {% if post.image %}
+                        <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+                        {% else %}
+                        <img src="{{post.thumbnail.url}}" class="card-img-top" alt="Gambar Default">
+                        {% endif %}
+                        <div class="card-body">
+                          <h5 class="card-title">{{ post.title|truncatechars:35 }}</h5>
+                          <p class="card-text text-muted">{{ post.summary|truncatechars:90 }}</p>
+                          <p class="card-text"><small class="text-primary fw-bold">Baca Selengkapnya &rarr;</small></p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  {# Gunakan modulo 3 atau forloop.last untuk menutup slide #}
+                  {% if forloop.counter|divisibleby:3 or forloop.last %}
+                </div>
+              </div>
+              {% endif %}
+
+              {% endfor %}
+            </div>
+
+            {# Tombol Navigasi Kiri #}
+            <button class="carousel-control-prev" type="button" data-bs-target="#blogCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+
+            {# Tombol Navigasi Kanan #}
+            <button class="carousel-control-next" type="button" data-bs-target="#blogCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!--- #CTA-->
+
+      <section class="cta" id="contact">
+        <div class="containers">
+
+          <div class="cta-content">
+            <p class="section-subtitle">Call To Action</p>
+
+            <h2 class="h2 section-title">Ready For Unforgatable Travel. Remember Us!</h2>
+
+            <p class="section-text">
+              Jangan tunda petualangan Anda bertemu Komodo dan menaklukkan Pulau Padar. Amankan slot perjalanan Anda
+              hari ini dan nikmati penawaran eksklusif dari kami!
+            </p>
+          </div>
+
+          <button class="btns btns-secondary">Contact Us !</button>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="containers">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <h1 style="text-decoration: none;">Terra Bajo</h1>
+          </a>
+          <!-- <p class="footer-text">
+            Urna ratione ante harum provident, eleifend, vulputate molestiae proin fringilla, praesentium magna conubia
+            at
+            perferendis, pretium, aenean aut ultrices.
+          </p> -->
+        </div>
+        <div class="footer-contact">
+          <h1 class="contact-title">Contact Us</h1>
+          <p class="contact-text">
+            Feel free to contact and reach us !!
+          </p>
+          <ul>
+            <li class="contact-item">
+              <ion-icon name="call-outline"></ion-icon>
+              <a href="tel:+01123456790" class="contact-link">+628000000000</a>
+            </li>
+            <li class="contact-item">
+              <ion-icon name="mail-outline"></ion-icon>
+              <a href="mailto:jollies-komodo.com" class="contact-link">info.terrabajo.com</a>
+            </li>
+            <li class="contact-item">
+              <ion-icon name="location-outline"></ion-icon>
+              <address>Labuan Bajo</address>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-form">
+          <p class="form-text">
+            Subscribe our newsletter for more update & news !!
+          </p>
+          <form action="" class="form-wrappers">
+            <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
+            <button type="submit" class="btns btns-secondary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="containers">
+        <p class="copyright">
+          &copy; 2025 <a href="" stryle="text-decoration: none">Terra-Bajo</a>. All rights reserved
+        </p>
+        <ul class="footer-bottom-list">
+          <li>
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#" class="footer-bottom-link">Term & Condition</a>
+          </li>
+          <li>
+            <a href="#" class="footer-bottom-link">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <a href="https://wa.me/6285338393764" target="_blank" class="btn btn-success whatsapp-float">
+    <i class="bi bi-whatsapp"></i> Chat Kami
+  </a>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristTrip",
+      "name": "{{ self.title }}",
+      "description": "Paket wisata ke Labuan Bajo termasuk Komodo, Pulau Padar, dan kapal phinisi terbaik.",
+      "image": "{{ self.thumbnail.url }}",
+      "provider": {
+        "@type": "Organization",
+        "name": "terra bajo",
+        "url": "https://terrabajo.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "IDR",
+        "price": "Harga Paket",
+        "url": "{{ request.build_absolute_uri }}"
+      },
+      "touristType": "Wisatawan Indonesia dan Internasional",
+      "areaServed": "Labuan Bajo, Nusa Tenggara Timur"
+    }
+</script>
+  <script src="{% static 'tour/js/script.js'%}"></script>
+  <script src="{% static 'tour/js/sosmed.js'%}"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/4031_RC01/embed_loader.js"></script>
+</body>
+
+</html>
