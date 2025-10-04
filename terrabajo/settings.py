@@ -15,8 +15,9 @@ from pathlib import Path
 # import os
 import os
 import dj_database_url
-
+from dotenv import load_dotenv
 from django.conf.global_settings import MEDIA_ROOT
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,12 +27,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4z)(e*s32mwlk&&kc1+^k&)wni$4#7oq5rot$wx*44w@n01tr#'
+# SECRET_KEY = 'django-insecure-4z)(e*s32mwlk&&kc1+^k&)wni$4#7oq5rot$wx*44w@n01tr#'
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '127.0.0.1,localhost').split(',') 
 
 
 # Application definition
@@ -85,8 +88,10 @@ WSGI_APPLICATION = 'terrabajo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 # Ganti default dengan string Anda saat testing lokal
-DATABASE_URL = os.environ.get(
-    'DATABASE_URL', 'postgresql://postgres:@terradjango2025@db.oqeoqqqqbgcvhkgsmaeb.supabase.co:5432/postgres')
+# DATABASE_URL = os.environ.get(
+#     'DATABASE_URL', 'postgresql://postgres.oqeoqqqqbgcvhkgsmaeb:@terradjango2025@aws-1-ap-southeast-1.pooler.supabase.com:6543/postgres')
+
+DATABASES_URL = os.environ.get('DATABASE_URL')
 
 # DATABASES = {
 #     'default': {
