@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+# import os
+import os
+import dj_database_url
+
 from django.conf.global_settings import MEDIA_ROOT
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -80,14 +84,22 @@ WSGI_APPLICATION = 'terrabajo.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+# Ganti default dengan string Anda saat testing lokal
+DATABASE_URL = os.environ.get(
+    'DATABASE_URL', 'postgresql://postgres:@terradjango2025@db.oqeoqqqqbgcvhkgsmaeb.supabase.co:5432/postgres')
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default=DATABASE_URL,
+        conn_max_age=600  # Opsional: menjaga koneksi tetap hidup selama 10 menit
+    )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -129,7 +141,7 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'full',
         'width': '100%',
         'height': '300px',
-        'extraPlugins':','.join(['uploadimage', 'image2'])
+        'extraPlugins': ','.join(['uploadimage', 'image2'])
     },
 }
 
